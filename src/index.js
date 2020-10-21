@@ -6,10 +6,10 @@ module.exports = function check(str, bracketsConfig) {
     let test;
     let myArray = [];
 
-    bracketsConfig = bracketsConfig.reduce((acc, val) => acc.concat(val), []);
+    bracketsConfig = bracketsConfig.reduce((acc, val) => acc.concat(val), []); //приводим массив из bracketsConfig, состоящий из массива с подмассивами, в один массив (поднимаем на верхний уровень)
 
-    let openingBrackets = bracketsConfig.filter((e, i) => !(i % 2));
-    let closingBrackets = bracketsConfig.filter((e, i) => (i % 2));
+    let openingBrackets = bracketsConfig.filter((e, i) => !(i % 2)); //все открывающиеся скобки - четные. Формируем массив с открывающимимся скобками.
+    let closingBrackets = bracketsConfig.filter((e, i) => (i % 2)); //закрывающиеся - нечетные. Формируем массив с закрывающимися скобками.
 
     for (let i = 0; i < str.length; i++) {
         test = str[i];
